@@ -1,0 +1,230 @@
+@import "tailwindcss";
+@config "../../../tailwind.config.js";
+
+@layer components {
+
+  /* ──────────────────────────────────────── Home Page ──────────────────────────────────────── */
+
+  /* ─── Hero Section ──────────────────────────────────────── */
+  .hero-section {
+    @apply relative w-full overflow-hidden h-[600px] mt-2.5;
+  }
+  .hero-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 h-full;
+  }
+  .hero-card {
+    @apply relative h-full;
+  }
+  .hero-image {
+    @apply w-full h-full object-cover;
+  }
+  .hero-link {
+    @apply absolute inset-0 flex items-center justify-center;
+  }
+  .btn-hero-male {
+    @apply absolute top-[50%] left-[35%]
+           bg-black text-white w-40 text-center
+           px-6 py-3 font-semibold text-lg shadow-md
+           hover:bg-gray-800 hover:shadow-xl hover:scale-105
+           transition-all duration-300 ease-in-out;
+  }
+  .btn-hero-female {
+    @apply absolute top-[50%] right-[35%]
+           bg-white text-black w-40 text-center
+           px-6 py-3 font-semibold text-lg shadow-md
+           hover:bg-gray-100 hover:shadow-xl hover:scale-105
+           transition-all duration-300 ease-in-out;
+  }
+
+  /* ─── Latest Collection ─────────────────────────────────── */
+  .collection-section {
+    @apply py-12;
+  }
+  .collection-container {
+    @apply max-w-screen-xl mx-auto;
+  }
+  .collection-title {
+    @apply text-2xl font-bold mb-8;
+  }
+
+  .carousel {
+    @apply flex overflow-x-auto no-scrollbar pb-6 -mx-4 px-4;
+  }
+  .carousel-item {
+    @apply min-w-[250px] flex-shrink-0 mx-2
+           border border-gray-200 rounded-md
+           overflow-hidden transition-shadow;
+  }
+  .carousel-item:hover {
+    @apply shadow-lg;
+  }
+
+  /* ─── Product Card ─────────────────────────────────────── */
+  .product-card {
+    @apply block;
+  }
+  .product-image {
+    @apply w-full h-64 object-cover;
+  }
+  .product-info {
+    @apply p-4 space-y-1;
+  }
+  .product-name {
+    @apply text-sm font-semibold text-gray-900;
+  }
+  .product-category {
+    @apply text-xs text-gray-500;
+  }
+  .product-price {
+    @apply text-sm font-bold text-gray-900;
+  }
+
+
+
+   .bottom-actions {
+    @apply absolute top-4 right-4 flex space-x-2;
+  }
+    /*  UPDATE button */
+  .bottom-actions button[name="action"][value="update"] {
+    @apply bg-black text-white px-4 py-2 rounded hover:bg-gray-800;
+  }
+  /*  DELETE button */
+  .bottom-actions button[name="action"][value="delete"] {
+    @apply bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700;
+  }
+  .border {
+    @apply border border-[#ebe8e5];
+  }
+
+  .border-b {
+    @apply border-b border-b-[#ebe8e5];
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+/* Responsive tweaks for tablets (≤ 768px) */
+@media (max-width: 768px) {
+  /* Hero Section - center buttons */
+  .btn-hero-male {
+    left: 45% !important;
+    transform: translateX(-50%);
+    width: 130px !important;
+  }
+
+  .btn-hero-female {
+    left: 55% !important;
+    right: auto !important;
+    transform: translateX(-50%);
+    width: 130px !important;
+  }
+
+  /* Carousel - stack items */
+  .carousel {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .carousel-item {
+    width: 80%;
+    max-width: 320px;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important; /* gap-6 */
+      max-width: 90% !important;
+      margin: 0 auto !important; /* centers it + removes ml-8 */
+      margin-bottom: 1.5rem !important; /* mb-6 */
+    }
+}
+
+/* 1920px (Large Desktop) */
+@media (min-width: 1920px) {
+  .hero-section {
+    height: 800px !important;
+  }
+
+  .btn-hero-male {
+    left: 45% !important;
+    transform: translateX(-50%);
+    width: 130px !important;
+  }
+
+  .btn-hero-female {
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 130px !important;
+  }
+
+  .carousel {
+      @apply flex flex-nowrap justify-center gap-6 overflow-visible;
+    }
+  .carousel-item {
+      @apply min-w-[320px] w-[320px] flex-shrink-0;
+    }
+
+  .dashboard-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 13rem !important; /* gap-52 */
+      max-width: 90rem !important; /* max-w-7xl */
+      margin-left: auto !important;
+      margin-right: auto !important;
+      margin-bottom: 3rem !important; /* mb-12 */
+      padding-left: 1.5rem !important; /* px-6 */
+      padding-right: 1.5rem !important;
+    }
+}
+
+/* 2560px (Ultra-wide screen) */
+@media (min-width: 2560px) {
+  .hero-section {
+    height: 1000px !important;
+  }
+}
+
+/* ──────────────────────────────────────── Wishlist Page ──────────────────────────────────────── */
+  
+   .wishlist-section {
+    @apply bg-white rounded-xl shadow-lg p-8;
+  }
+
+  .wishlist-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+
+  .wishlist-card {
+    @apply border border-gray-200 rounded-md overflow-hidden transition-shadow duration-200 hover:shadow-lg bg-white;
+  }
+
+  .wishlist-image {
+    @apply w-full h-72 object-cover;
+  }
+
+  .wishlist-info {
+    @apply px-4 py-3;
+  }
+
+  .wishlist-title {
+    @apply text-sm font-semibold text-gray-900 leading-tight truncate;
+  }
+
+  .wishlist-price {
+    @apply mt-2 text-sm font-semibold text-gray-500;
+  }
+
+  .wishlist-remove-btn {
+    @apply w-full inline-flex justify-center items-center gap-2 px-4 py-2 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700 transition;
+  }
+}
+
+
+
