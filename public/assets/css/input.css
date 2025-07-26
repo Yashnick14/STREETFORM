@@ -194,7 +194,7 @@
 /* ──────────────────────────────────────── Wishlist Page ──────────────────────────────────────── */
   
    .wishlist-section {
-    @apply bg-white rounded-xl shadow-lg p-8;
+    @apply bg-black rounded-xl shadow-lg p-8;
   }
 
   .wishlist-grid {
